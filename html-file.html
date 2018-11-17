@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Berlin Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js-file.js"></script>
+    <link rel="stylesheet" href="css-file.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="headline"><h1>BERLIN QUIZ</h1></header>
+
+    <!-- WHEEL -->
+    <div id="outerContainer">
+      <section id="wheel">
+        <canvas id="canvasWheel" width="500" height="500"></canvas>
+        <button type="button" id="spin">Spin!</button>
+      </section>
+
+      <!-- QUESTION -->
+
+      <section id="quiz">
+        <div id="counter">5</div>
+
+        <!-- QUESTION & ANSWER CONTAINER -->
+        <div id="questionContainer">
+          <!-- CLUBSZENE -->
+          <div id="clubszene">
+            <!-- Question 1 -->
+            <div class="question">
+              <h2>Wie heißt der Türsteher vom Berghain?</h2>
+
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="sven" name="question" />
+                  <label for="sven">Sven</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="marc" name="question" />
+                  <label for="marc">Marc</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="dom" name="question" />
+                  <label for="dom">Dom</label>
+                </div>
+              </form>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+              <h2>Heideglühen Adresse</h2>
+
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="wedding" name="question" />
+                  <label for="wedding">Wedding</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="kreuzberg" name="question" />
+                  <label for="kreuzberg">Kreuzberg</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="fhain" name="question" />
+                  <label for="fhain">Fhain</label>
+                </div>
+              </form>
+            </div>
+
+            <!-- Question 3 -->
+            <!-- Question 4 -->
+          </div>
+
+          <!-- FROM A TO B -->
+          <div id="fromatob">
+            <!-- Question 1 -->
+            <div class="question">
+              <h2>Wie kommt man zum Herrmannplatz?</h2>
+
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="u8" name="question" />
+                  <label for="u8">U8</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="u7" name="question" />
+                  <label for="u7">U7</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="u2" name="question" />
+                  <label for="u2">u2</label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- POINTS RED / GREEN -->
+        <div id="pointWrap">
+          <div class="points"></div>
+          <div class="points"></div>
+          <div class="points"></div>
+          <div class="points"></div>
+          <div class="points"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
