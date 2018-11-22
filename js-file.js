@@ -1,73 +1,105 @@
 window.onload = function() {
 
+//FORTUNE WHEEL
+var canvas = $("#canvas")[0];
+var ctx = canvas.getContext("2d");
+var wheel={
+  draw: function(){ 
 
-  var canvas = $("#canvas")[0];
-  var ctx = canvas.getContext("2d");
-  var radius = 250
-  //Draws first Triangle
-  ctx.beginPath();
-  ctx.moveTo(250,250);
-  ctx.arc(250,250,250,0,(Math.PI*2)/5);
-  ctx.fillStyle = "lightgreen";
-  ctx.fill();
-  
-  
-  //Draws second Triangle
-  ctx.beginPath();
-  ctx.moveTo(250,250);
-  ctx.arc(250,250,250,(Math.PI*2)/5,2*(Math.PI*2)/5);
-  ctx.fillStyle = "darkblue";
-  ctx.fill();
-  //Draws third Triangle
-  ctx.beginPath();
-  ctx.moveTo(250,250);
-  ctx.arc(250,250,250,2*(Math.PI*2)/5,3*(Math.PI*2)/5);
-  ctx.fillStyle = "orange";
-  ctx.fill();
-  //Draws fourth Triangle
-  ctx.beginPath();
-  ctx.moveTo(250,250);
-  ctx.arc(250,250,250,3*(Math.PI*2)/5,4*(Math.PI*2)/5);
-  ctx.fillStyle = "red";
-  ctx.fill();
+//Draws first Triangle
+ctx.beginPath();
+ctx.moveTo(250, 250);
+ctx.arc(250, 250, 250, 0,(Math.PI * 2) / 5);
+ctx.fillStyle = "lightgreen";
+ctx.fill();
+//Draws second Triangle
+ctx.beginPath();
+ctx.moveTo(250, 250);
+ctx.arc(250, 250, 250, (Math.PI * 2) / 5, (2 * (Math.PI * 2)) / 5);
+ctx.fillStyle = "darkblue";
+ctx.fill();
+//Draws third Triangle
+ctx.beginPath();
+ctx.moveTo(250, 250);
+ctx.arc(250, 250, 250, (2 * (Math.PI * 2)) / 5, (3 * (Math.PI * 2)) / 5);
+ctx.fillStyle = "orange";
+ctx.fill();
+//Draws fourth Triangle
+ctx.beginPath();
+ctx.moveTo(250, 250);
+ctx.arc(250, 250, 250, (3 * (Math.PI * 2)) / 5, (4 * (Math.PI * 2)) / 5);
+ctx.fillStyle = "red";
+ctx.fill();
+//Draws fifth Triangle
+ctx.beginPath();
+ctx.moveTo(250, 250);
+ctx.arc(250, 250, 250, (4 * (Math.PI * 2)) / 5, (5 * (Math.PI * 2)) / 5);
+ctx.fillStyle = "purple";
+ctx.fill();
+}
+};
+wheel.draw();
+//Writes Category Text on Canvas
+var text={
+  draw: function(){
+ctx.save();
+ctx.translate(250, 250);
+ctx.rotate((36 * Math.PI) / 180);
+ctx.font = '28px "Dosis", serif';
+ctx.fillStyle = "white";
+ctx.fillText("Berlin Clubscene", 40, 10);
+ctx.rotate((72 * Math.PI) / 180);
+ctx.font = '28px "Dosis", serif';
+ctx.fillStyle = "white";
+ctx.fillText("From A to B", 40, 10);
+ctx.rotate((72 * Math.PI) / 180);
+ctx.font = '28px "Dosis", serif';
+ctx.fillStyle = "white";
+ctx.fillText("Eating & Drinking", 40, 10);
+ctx.rotate((72 * Math.PI) / 180);
+ctx.font = '28px "Dosis", serif';
+ctx.fillStyle = "white";
+ctx.fillText("District Clichées", 40, 10);
+ctx.rotate((72 * Math.PI) / 180);
+ctx.font = '28px "Dosis", serif';
+ctx.fillStyle = "white";
+ctx.fillText("Fun Facts", 40, 10);
+ctx.restore();
+}
+}
 
-  //Draws fifth Triangle
-  ctx.beginPath();
-  ctx.moveTo(250,250);
-  ctx.arc(250,250,250,4*(Math.PI*2)/5,5*(Math.PI*2)/5);
-  ctx.fillStyle = "purple";
-  ctx.fill();
+text.draw();
+//Spins Wheel
 
-  ctx.save();
-  ctx.translate(250,250)
-  ctx.rotate (36*Math.PI/180);
-  ctx.font = '30px "Dosis", serif';
-  ctx.fillStyle = "white";
-  ctx.fillText("Berlin Clubscene", 50, 0);
+var x=20;
+var random;
 
-  ctx.rotate (72*Math.PI/180);
-  ctx.font = '30px "Dosis", serif';
-  ctx.fillStyle = "white";
-  ctx.fillText("From A to B", 50, 0);
 
-  ctx.rotate (72*Math.PI/180);
-  ctx.font = '30px "Dosis", serif';
-  ctx.fillStyle = "white";
-  ctx.fillText("Food & Drinks", 50, 0);
+function rotate(){
+  ctx.clearRect(0,0,500,500);
+  ctx.translate(250,250);
+  ctx.rotate(Math.PI/x);
+  ctx.translate(-250,-250);
+  wheel.draw();
+  text.draw();
+  var requestId = window.requestAnimationFrame(rotate);
+  x += 0.2;
+  if (x > random) {
+    window.cancelAnimationFrame(requestId);
+    x=20;
+  };
+}
 
-  ctx.rotate (72*Math.PI/180);
-  ctx.font = '30px "Dosis", serif';
-  ctx.fillStyle = "white";
-  ctx.fillText("District Clichées", 50, 0);
 
-  ctx.rotate (72*Math.PI/180);
-  ctx.font = '30px "Dosis", serif';
-  ctx.fillStyle = "white";
-  ctx.fillText("Fun Facts", 50, 0);
 
-  ctx.restore();
- 
-  
+$("#spin").on("click", function() {
+random = Math.floor(Math.random() * 70 + 50)
+rotate();
+$("#spin").prop('disabled', true);
+});
+
+
+
   
 
 
@@ -98,7 +130,7 @@ window.onload = function() {
     } else if (iterations === 0){
     clearInterval(countDown) }
   
-  },2000)
+  },1500)
   
 
   $(".answerSet input").on("click", function() {
@@ -137,7 +169,7 @@ window.onload = function() {
   function gameOver() {
   
     if(i === 4) {
-
+     
       window.setTimeout(function() { 
 
       var counterRed = 0;
@@ -166,8 +198,9 @@ window.onload = function() {
       }
 
     } , 800)
+    $("#spin").prop('disabled', false);
   }
-   
+
     
   }
 
