@@ -113,3 +113,10 @@ background-color:red;
   margin-bottom: 15px;
 }
 
+
+#default-text {
+padding-top: 60px;
+display:flex;
+justify-content: center;
+}
+

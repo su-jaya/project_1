@@ -1,137 +1,213 @@
 window.onload = function() {
 
-//FORTUNE WHEEL
-var canvas = $("#canvas")[0];
-var ctx = canvas.getContext("2d");
-var wheel={
-  draw: function(){ 
 
-//Draws first Triangle
-ctx.beginPath();
-ctx.moveTo(250, 250);
-ctx.arc(250, 250, 250, 0,(Math.PI * 2) / 5);
-ctx.fillStyle = "lightgreen";
-ctx.fill();
-//Draws second Triangle
-ctx.beginPath();
-ctx.moveTo(250, 250);
-ctx.arc(250, 250, 250, (Math.PI * 2) / 5, (2 * (Math.PI * 2)) / 5);
-ctx.fillStyle = "darkblue";
-ctx.fill();
-//Draws third Triangle
-ctx.beginPath();
-ctx.moveTo(250, 250);
-ctx.arc(250, 250, 250, (2 * (Math.PI * 2)) / 5, (3 * (Math.PI * 2)) / 5);
-ctx.fillStyle = "orange";
-ctx.fill();
-//Draws fourth Triangle
-ctx.beginPath();
-ctx.moveTo(250, 250);
-ctx.arc(250, 250, 250, (3 * (Math.PI * 2)) / 5, (4 * (Math.PI * 2)) / 5);
-ctx.fillStyle = "red";
-ctx.fill();
-//Draws fifth Triangle
-ctx.beginPath();
-ctx.moveTo(250, 250);
-ctx.arc(250, 250, 250, (4 * (Math.PI * 2)) / 5, (5 * (Math.PI * 2)) / 5);
-ctx.fillStyle = "purple";
-ctx.fill();
-}
-};
-wheel.draw();
-//Writes Category Text on Canvas
-var text={
-  draw: function(){
-ctx.save();
-ctx.translate(250, 250);
-ctx.rotate((36 * Math.PI) / 180);
-ctx.font = '28px "Dosis", serif';
-ctx.fillStyle = "white";
-ctx.fillText("Berlin Clubscene", 40, 10);
-ctx.rotate((72 * Math.PI) / 180);
-ctx.font = '28px "Dosis", serif';
-ctx.fillStyle = "white";
-ctx.fillText("From A to B", 40, 10);
-ctx.rotate((72 * Math.PI) / 180);
-ctx.font = '28px "Dosis", serif';
-ctx.fillStyle = "white";
-ctx.fillText("Eating & Drinking", 40, 10);
-ctx.rotate((72 * Math.PI) / 180);
-ctx.font = '28px "Dosis", serif';
-ctx.fillStyle = "white";
-ctx.fillText("District Clichées", 40, 10);
-ctx.rotate((72 * Math.PI) / 180);
-ctx.font = '28px "Dosis", serif';
-ctx.fillStyle = "white";
-ctx.fillText("Fun Facts", 40, 10);
-ctx.restore();
-}
-}
+  $("#default-text").hide();
 
-text.draw();
-//Spins Wheel
-
-var x=20;
-var random;
-
-
-function rotate(){
-  ctx.clearRect(0,0,500,500);
-  ctx.translate(250,250);
-  ctx.rotate(Math.PI/x);
-  ctx.translate(-250,-250);
-  wheel.draw();
-  text.draw();
-  var requestId = window.requestAnimationFrame(rotate);
-  x += 0.2;
-  if (x > random) {
-    window.cancelAnimationFrame(requestId);
-    x=20;
-  };
-}
-
-
-
-$("#spin").on("click", function() {
-random = Math.floor(Math.random() * 70 + 50)
-rotate();
-$("#spin").prop('disabled', true);
-});
-
-
-
-  
-
-
-
-
-
-  
   $("#fromatob").children().hide();
   $("#clubszene").children().hide();
   $("#funfacts").children().hide();
   $("#food").children().hide();
   $("#stereotypes").children().hide();
 
+  //FORTUNE WHEEL
 
-  var countDownNumber = 5;
-  $("#counter").html(countDownNumber);
+  var canvas = $("#canvas")[0];
+  var ctx = canvas.getContext("2d");
 
-  var countDown = setInterval(function() {
+  var categories = [];
+  categories.push({
+    id: "berlinclubscene",
+    x: 0,
+    y: (Math.PI * 2) / 5,
+    color: "#2CEBA3"
+  });
+  categories.push({
+    id: "fromatob",
+    x: (Math.PI * 2) / 5,
+    y: (2 * (Math.PI * 2)) / 5,
+    color: "#A32CEB"
+  });
+  categories.push({
+    id: "eatingdrinking",
+    x: (2 * (Math.PI * 2)) / 5,
+    y: (3 * (Math.PI * 2)) / 5,
+    color: "#2CD3EB"
+  });
+  categories.push({
+    id: "kiezclichees",
+    x: (3 * (Math.PI * 2)) / 5,
+    y: (4 * (Math.PI * 2)) / 5,
+    color: "#EB2CD3"
+  });
+  categories.push({
+    id: "funfacts",
+    x: (4 * (Math.PI * 2)) / 5,
+    y: (5 * (Math.PI * 2)) / 5,
+    color: "#2C74EB"
+  });
 
-    var iterations = 5;
+  var wheel = {
+    draw: function() {
+      for (var i = 0; i < categories.length; i++) {
+        var category = categories[i];
+        ctx.beginPath();
+        ctx.moveTo(250, 250);
+        ctx.arc(250, 250, 250, category.x, category.y);
+        ctx.fillStyle = category.color;
+        ctx.fill();
+      }
+    }
+  };
+
+  wheel.draw();
+
+  //Writes Category Text on Canvas
+
+  var text = {
+    draw: function() {
+      ctx.save();
+      ctx.translate(250, 250);
+      ctx.rotate((36 * Math.PI) / 180);
+      ctx.font = '28px "Dosis", serif';
+      ctx.fillStyle = "white";
+      ctx.fillText("Berlin Clubscene", 40, 10);
+
+      ctx.rotate((72 * Math.PI) / 180);
+      ctx.font = '28px "Dosis", serif';
+      ctx.fillStyle = "white";
+      ctx.fillText("From A to B", 40, 10);
+
+      ctx.rotate((72 * Math.PI) / 180);
+      ctx.font = '28px "Dosis", serif';
+      ctx.fillStyle = "white";
+      ctx.fillText("Eating & Drinking", 40, 10);
+
+      ctx.rotate((72 * Math.PI) / 180);
+      ctx.font = '28px "Dosis", serif';
+      ctx.fillStyle = "white";
+      ctx.fillText("District Clichées", 40, 10);
+
+      ctx.rotate((72 * Math.PI) / 180);
+      ctx.font = '28px "Dosis", serif';
+      ctx.fillStyle = "white";
+      ctx.fillText("Fun Facts", 40, 10);
+
+      ctx.restore();
+    }
+  };
+  text.draw();
+
+  //Spins Wheel
+
+  var x = 10;
+  var random;
+  var totalRotation = 0;
+
+  function rotate() {
+    ctx.clearRect(0, 0, 500, 500);
+    ctx.translate(250, 250);
+    ctx.rotate(Math.PI / x);
+    totalRotation += Math.PI / x;
+    ctx.translate(-250, -250);
+    wheel.draw();
+    text.draw();
+    if (x <= random) {
+      window.requestAnimationFrame(rotate);
+      x += 0.2;
+    } else {
+      selectCategory();
+    }
+  }
+
+  //Selects the category
+
+  var selectedCategory;
+
+  function selectCategory() {
+    var remainderRotation = totalRotation % (Math.PI * 2);
+    var sector = Math.PI * 2 - remainderRotation - Math.PI / 2 
     
-    if($("#counter").html() > 0) {
-      $("#counter").html(parseFloat($("#counter").html())-1)
-    } else if(parseFloat($("#counter").html()) === 0) {
-      questionWrong(); 
-      $("#counter").html(5);
-      iterations--
-    } else if (iterations === 0){
-    clearInterval(countDown) }
+    categories.forEach(function(cat) {
+    
+    if (sector < 0) {
+      sector = Math.PI * 2 + sector}
+     } )
+    
+    categories.forEach(function(cat) {
+      if(sector > cat.x && sector < cat.y) {
+
+    selectedCategory = cat.id
+    console.log(cat.id)
+ 
+      }})
+    
+      printCategory();
+    };
   
-  },1500)
+    // var countDownNumber = 5;
+    var iterations = 5;
+
+  function printCategory() {
+    if (selectedCategory === "fromatob") {
+      selectedCategory = $("#fromatob");
+    }
+    if (selectedCategory === "berlinclubscene") {
+      selectedCategory = $("#clubszene");
+    }
+    if (selectedCategory === "eatingdrinking") {
+      selectedCategory = $("#food");
+    }
+    if (selectedCategory === "funfacts") {
+      selectedCategory = $("#funfacts");
+    }
+    if (selectedCategory === "kiezclichees") {
+      selectedCategory = $("#stereotypes");
+     
+    } 
+
+    selectedCategory
+    .children()
+    .eq(i)
+    .show();
+
+    
+    // $("#counter").html(countDownNumber);
   
+    // var countDown = setInterval(function() {
+
+    //   if (iterations === 0){
+    //     clearInterval(countDown) };
+    
+    //   if($("#counter").html() > 0) {
+    //     $("#counter").html(parseFloat($("#counter").html())-1);
+
+    //   } else if(parseFloat($("#counter").html()) === 0) {
+    //     questionWrong(); 
+    //     $("#counter").html(5);
+    //   } 
+
+     
+    // },1500);
+
+   
+  
+  }
+
+
+  //Onclick SPIN button
+
+  $("#spin").click(function() {
+    totalRotation = 0;
+    // var audio = new Audio("audiofile_fair.mp3");
+    // audio.play();
+    random = Math.floor(Math.random() * 70 + 50);
+    rotate();
+    $("#spin").prop("disabled", true);
+  });
+
+
+// quiz
+
 
   $(".answerSet input").on("click", function() {
     if ($(this).parent().hasClass("correct")) {
@@ -143,31 +219,29 @@ $("#spin").prop('disabled', true);
 
 
   var i = 0;
-
-  function printClubszene() {
-    $("#clubszene").children().eq(i).show();
-  }
   
   function questionRight() {
+    iterations--;
     $("#pointWrap").children().eq(i).addClass("greenpoint");
-    $("#clubszene").children().eq(i).hide();
+    selectedCategory.children().eq(i).hide();
     gameOver();
-    $("#counter").html(countDownNumber);
+    // $("#counter").html(countDownNumber);
     i += 1;
-    $("#clubszene").children().eq(i).show();
+    selectedCategory.children().eq(i).show();
   }
   
   function questionWrong() {
+    iterations--;
     $("#pointWrap").children().eq(i).addClass("redpoint");
-    $("#clubszene").children().eq(i).hide();
+    selectedCategory.children().eq(i).hide();
     gameOver();
-    $("#counter").html(countDownNumber);
+    // $("#counter").html(countDownNumber);
     i += 1;
-    $("#clubszene").children().eq(i).show();
+    selectedCategory.children().eq(i).show();
   }
 
   function gameOver() {
-  
+   
     if(i === 4) {
      
       window.setTimeout(function() { 
@@ -197,19 +271,36 @@ $("#spin").prop('disabled', true);
         alert("all wrong! :( try again!")
       }
 
-    } , 800)
     $("#spin").prop('disabled', false);
+    $("#default-text").hide();
+    x=10;
+    ctx.resetTransform();
+    wheel.draw();
+    text.draw();
+    i = 0;
+
+
+    for(var o = 0; o < 5; o++) {
+      $("#pointWrap").children().eq(o).removeClass("greenpoint");
+      $("#pointWrap").children().eq(o).removeClass("redpoint");
+    }
+    
+
+
+
+    } , 800)
+
+
   }
 
-    
+
+  
+  
   }
 
 
   
 };
-
-
-
 
 
 
