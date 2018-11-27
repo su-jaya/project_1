@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>Berlin Quiz</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js-file.js"></script>
+  <link rel="stylesheet" href="css-file.css" />
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="headline">
+    <h1>BERLIN QUIZ</h1>
+  </header>
+
+  <!-- WHEEL -->
+  <div id="outerContainer">
+    <section id="wheel">
+      <canvas id="canvas" width="500" height="500"></canvas>
+      <button type="button" id="spin">Spin!</button>
+    </section>
+
+    <!-- THE QUIZ -->
+
+    <section id="quiz">
+      <div id="counter"></div>
+
+      <!-- QUIZ CONTAINER -->
+
+      <div id="questionContainer">
+        <h1 id="default-text">SPIN THE WHEEL!</h1>
+
+        <!-- CLUBSZENE -->
+        <div id="clubszene">
+
+          <!-- CLUBSZENE SET 1-->
+          <div id="clubszene1">
+          <!-- Question 1 -->
+          <div class="question">
+            <h2>What's the first name of Berlins most famous bouncer?</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="sven" name="question" />
+                <label for="sven">Sven</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="marc" name="question" />
+                <label for="marc">Marc</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="steven" name="question" />
+                <label for="steven">Steven</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question">
+            <h2>When was the famous Bar25 shut down?</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="2005" name="question" />
+                <label for="2005">2005</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="2010" name="question" />
+                <label for="2010">2010</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="2015" name="question" />
+                <label for="2015">2015</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 3 -->
+
+          <div class="question">
+            <h2>How to translate ФУЗИОН?</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="nation" name="question" />
+                <label for="nation">Nation</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="garbicz" name="question" />
+                <label for="garbicz">Garbicz</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="fusion" name="question" />
+                <label for="fusion">Fusion</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 4 -->
+
+          <div class="question">
+            <h2>Komet Bernhard is...</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="pensioner" name="question" />
+                <label for="pensioner">a techno-persioner</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="club" name="question" />
+                <label for="club">a techno club</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="festival" name="question" />
+                <label for="festival">a techno festival</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 5-->
+
+          <div class="question">
+            <h2>What to wear when going to KitKatClub</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="allblack" name="question" />
+                <label for="allblack">all black</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="chic" name="question" />
+                <label for="chic">chic</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="nothing" name="question" />
+                <label for="nothing">nothing</label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+          <!-- CLUBSZENE SET 2-->
+        <div id="clubszene2">
+          <!-- Question 1 -->
+          <div class="question">
+            <h2>Which one is the oldest club in Berlin?</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="so36" name="question" />
+                <label for="so36">SO36</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="tresor" name="question" />
+                <label for="tresor">Tresor</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="matrix" name="question" />
+                <label for="matrix">Matrix</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question">
+            <h2>If you wanna take a dip in a swimming pool while clubbing go to</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="watergate" name="question" />
+                <label for="watergate">Watergate</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="wilderenate" name="question" />
+                <label for="wilderenate">Wilde Renate</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="kitkat" name="question" />
+                <label for="kitkat">Kit Kat Club</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 3 -->
+
+          <div class="question">
+            <h2>The replacement of Bar25 was</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="katerholzig" name="question" />
+                <label for="katerholzig">Kater Holzig</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="katerblau" name="question" />
+                <label for="katerblau">Kater Blau</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="katerschmaus" name="question" />
+                <label for="katerschmaus">Katerschmaus</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 4 -->
+
+          <div class="question">
+            <h2>A famous festival in Berlin is called</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="garbicz2" name="question" />
+                <label for="garbicz2">Garbicz Festival</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="lollapalooza" name="question" />
+                <label for="lollapalooza">Lollapalooza</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="sonnemondsterne" name="question" />
+                <label for="sonnemondsterne">Sonne Mond Sterne</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 5-->
+
+          <div class="question">
+            <h2>The club Sisyphos is located in a former</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="condomfactory" name="question" />
+                <label for="condomfactory">Condom factory</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="dog" name="question" />
+                <label for="dog">Factory for dog biscuits</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="leather" name="question" />
+                <label for="leather">Leather shoe factory</label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- CLUBSZENE SET 3-->
+        <div id="clubszene3">
+          <!-- Question 1 -->
+          <div class="question">
+            <h2>:// about blank is located</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="nk" name="question" />
+                <label for="nk">in Neukölln</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="fhain" name="question" />
+                <label for="fhain">in Friedrichshain</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="schoeneberg" name="question" />
+                <label for="schoeneberg">in Schöneberg</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question">
+            <h2>Ostgut ran between 1998-2003 and is now called
+            </h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="tresor2" name="question" />
+                <label for="tresor2">Tresor</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="berghain" name="question" />
+                <label for="berghain">Berghain</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="ohm" name="question" />
+                <label for="ohm">OHM</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question">
+            <h2>How many people fit in Golden Gate?</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="500" name="question" />
+                <label for="500">500</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="100" name="question" />
+                <label for="100">100</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="200" name="question" />
+                <label for="200">200</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 4 -->
+
+          <div class="question">
+            <h2>Party on a boat? Go to</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="arenaclub" name="question" />
+                <label for="arenaclub">Arena Club</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="cdv" name="question" />
+                <label for="cdv">CDV</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="hoppetosse" name="question" />
+                <label for="hoppetosse">Hoppetosse</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 5-->
+
+          <div class="question">
+            <h2>Party with a view at</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="klunkerkranich" name="question" />
+                <label for="klunkerkranich">Klunkerkranich</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="odessa" name="question" />
+                <label for="odessa">Odessa Bar</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="klappe" name="question" />
+                <label for="klappe">Zur Klappe</label>
+              </div>
+            </form>
+          </div>
+        </div>
+        </div>
+
+        <!--FROM A TO B-->
+        <div id="fromatob">
+
+          <!-- FROM A TO B SET 1-->
+          <div id="fromatob1">
+          <!-- Question 1 -->
+          <div class="question">
+            <h2>If you take the S42 you circle the city</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="clockwise" name="question" />
+                <label for="clockwise">Clockwise</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="anticlockwise" name="question" />
+                <label for="anti-clockwise">Anti-clockwise</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="notacircle" name="question" />
+                <label for="notacircle">It's not a circle</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 2-->
+          <div class="question">
+            <h2>How many lines does the U-Bahn have?</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="10" name="question" />
+                <label for="10">10</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="9" name="question" />
+                <label for="9">9</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="12" name="question" />
+                <label for="12">12</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 3-->
+
+          <div class="question">
+            <h2>If you want to enjoy a bit of Berlin sightseeing over ground you should take the</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="u8" name="question" />
+                <label for="u8">U8</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="u1" name="question" />
+                <label for="u1">U1</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="u2" name="question" />
+                <label for="u2">U2</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 4-->
+
+          <div class="question">
+            <h2>If you take a stroll along the tracks of the Berlin Wall, you could go from</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="pankow" name="question" />
+                <label for="pankow">Pankow to Köpenick</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="friedrichshain" name="question" />
+                <label for="friedrichshain">Friedrichshain to Stegliz</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="reinicken" name="question" />
+                <label for="reinicken">Reinickendorf to Neukölln</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 5-->
+
+          <div class="question">
+            <h2>In this U-Bahn station you can read parts of the human rights declaration</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="nordbahnhof" name="question" />
+                <label for="nordbahnhof">Nordbahnhof</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="stadtmitte" name="question" />
+                <label for="stadtmitte">Stadtmitte</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="westhafen" name="question" />
+                <label for="westhafen">Westhafen</label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- FROM A TO B SET 2-->
+        <div id="fromatob2">
+
+            <!-- Question 1 -->
+            <div class="question">
+              <h2>How long is Berlins road network?</h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="10263" name="question" />
+                  <label for="10263">10263 km</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="5452" name="question" />
+                  <label for="5452">5452</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="2193" name="question" />
+                  <label for="2193">2193</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 2-->
+            <div class="question">
+              <h2>How many bridges will take you from a to b in Berlin?</h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="3500" name="question" />
+                  <label for="3500">3500</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="700" name="question" />
+                  <label for="700">700</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="1700" name="question" />
+                  <label for="1700">1700</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 3-->
+            <div class="question">
+              <h2>How many bus lines does Berlin have?</h2>
+  
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="152" name="question" />
+                  <label for="152">152</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="280" name="question" />
+                  <label for="280">280</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="88" name="question" />
+                  <label for="88">88</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 4-->
+            <div class="question">
+              <h2>Most Berliners go by
+                </h2>
+  
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="ubahn" name="question" />
+                  <label for="ubahn">U-Bahn</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="sbahn" name="question" />
+                  <label for="sbahn">S-Bahn</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="bus" name="question" />
+                  <label for="bus">Bus</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 5-->
+            <div class="question">
+              <h2>Berlins most unpunctual bus is 
+                </h2>
+  
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="893" name="question" />
+                  <label for="893">893 (Zepernick -Höhenschönhausen)</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="m29" name="question" />
+                  <label for="m29">M 29 (Roseneck - Hermannplatz)</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="txl" name="question" />
+                  <label for="txl">TXL (Tegel - Hauptbahnhof)</label>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        <!-- FROM A TO B SET 3-->
+        <div id="fromatob3">
+
+            <!-- Question 1 -->
+            <div class="question">
+              <h2>Which S-Bahn will not take you from Alexanderplatz to Zoologischer Garten?</h2>
+
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="s5" name="question" />
+                  <label for="s5">S5</label>
+                </div>
+
+                <div class="answerSet correct">
+                  <input type="radio" id="s6" name="question" />
+                  <label for="s6">S6</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="s7" name="question" />
+                  <label for="s7">S7</label>
+                </div>
+              </form>
+            </div>
+
+            <!--Question 2-->
+            <div class="question">
+              <h2>Berlin Subway systems’ (SBahn and UBahn) combined length equals</h2>
+
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="473" name="question" />
+                  <label for="473">473 km</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="812" name="question" />
+                  <label for="812">812 km</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="99" name="question" />
+                  <label for="99">99 km</label>
+                </div>
+              </form>
+            </div>
+
+            <!--Question 3-->
+            <div class="question">
+              <h2>If you love traffic jams, the delay hotspot in Berlin is…</h2>
+
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="tempelhoferdamm" name="question" />
+                  <label for="tempelhoferdamm">Tempelhofer Damm</label>
+                </div>
+
+                <div class="answerSet correct">
+                  <input type="radio" id="a100" name="question" />
+                  <label for="a100">Seestraße / A100</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="mehringdamm" name="question" />
+                  <label for="mehringdamm">Mehringdamm</label>
+                </div>
+              </form>
+            </div>
+
+            <!--Question 4-->
+            <div class="question">
+              <h2>Behind Melbourne and St. Petersburg, Berlin has the biggest
+                </h2>
+
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="tramnetwork" name="question" />
+                  <label for="tramnetwork">Tram network in the world</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="publictransport" name="question" />
+                  <label for="publictransport">Public Transportation network in the world</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="busnetwork" name="question" />
+                  <label for="busnetwork">Bus network in the world</label>
+                </div>
+              </form>
+            </div>
+
+            <!--Question 5-->
+            <div class="question">
+              <h2>The S1 takes you from
+                </h2>
+
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="frohnau" name="question" />
+                  <label for="frohnau">Frohnau to Teltow Stadt</label>
+                </div>
+
+                <div class="answerSet">
+                  <input type="radio" id="birkenwerder" name="question" />
+                  <label for="birkenwerder">Birkenwerder to Zeuthen</label>
+                </div>
+
+                <div class="answerSet correct">
+                  <input type="radio" id="oranienburg" name="question" />
+                  <label for="oranienburg">Oranienburg to Wannsee</label>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FOOD -->
+        <div id="food">
+
+            <!-- FOOD SET 1 -->
+          <div id="food1">
+          <!-- Question 1 -->
+          <div class="question">
+            <h2>If you buy buns in a Berlin bakery you should ask for...</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="semmel" name="question" />
+                <label for="semmel">Semmeln</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="wecken" name="question" />
+                <label for="wecken">Wecken</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="schrippen" name="question" />
+                <label for="schrippen">Schrippen</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 2-->
+          <div class="question">
+            <h2>If you would like to queue for a Döner in Berlin go to</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="sahara" name="question" />
+                <label for="sahara">Sahara Falafel</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="mustafa" name="question" />
+                <label for="mustafa">Mustafa's Gemüsekebab</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="xldoener" name="question" />
+                <label for="xldoener">XL Döner</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 3-->
+          <div class="question">
+            <h2>Meet the celebrities at</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="grillroyal" name="question" />
+                <label for="grillroyal">Grill Royal</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="12apostel" name="question" />
+                <label for="12apostel">12 Apostel</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="vapiano" name="question" />
+                <label for="vapiano">Vapiano</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 4-->
+          <div class="question">
+            <h2>You’ll never get a Berliner Weiße in...</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="green" name="question" />
+                <label for="green">green</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="pink" name="question" />
+                <label for="pink">pink</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="red" name="question" />
+                <label for="red">red</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 5-->
+          <div class="question">
+            <h2>Which one is not a typical Döner sauce?</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="garlic" name="question" />
+                <label for="garlic">garlic sauce</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="chili" name="question" />
+                <label for="chili">chili sauce</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="peanut" name="question" />
+                <label for="peanut">peanut sauce</label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+          <!-- FOOD SET 2 -->
+        <div id="food2">
+            <!-- Question 1 -->
+            <div class="question">
+              <h2>How much kebab meat is eaten in Berlin every day?</h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="520" name="question" />
+                  <label for="520">520 kg</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="60" name="question" />
+                  <label for="60">60 tons</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="120" name="question" />
+                  <label for="120">120 tons</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 2-->
+            <div class="question">
+              <h2>What filling can you typically find in a „Berliner“?</h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="cream" name="question" />
+                  <label for="cream">Cream cheese</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="plum" name="question" />
+                  <label for="plum">Plum jam</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="nutella" name="question" />
+                  <label for="nutella">Nutella</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 3-->
+            <div class="question">
+              <h2>Where can you not find a Curry36?</h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="mehrindamm1" name="question" />
+                  <label for="mehrindamm1">Mehringdamm</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="warschauer" name="question" />
+                  <label for="warschauer">Warschauer Straße</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="friedrichstraße" name="question" />
+                  <label for="friedrichstraße">Friedrichstraße</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 4-->
+            <div class="question">
+              <h2>Where is the highest restaurant in Berlin?</h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="teufelsberg" name="question" />
+                  <label for="teufelsberg">On the Teufelsberg</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="parkinn" name="question" />
+                  <label for="parkinn">In the Park Inn Hotel</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="tvtower" name="question" />
+                  <label for="tvtower">In the TV Tower</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 5-->
+            <div class="question">
+              <h2>A schnaps you should know if you drink with Berliners:</h2>
+  
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="luft" name="question" />
+                  <label for="luft">Berliner Luft</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="schanuze" name="question" />
+                  <label for="schnauze">Berliner Schnauze</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="wasser" name="question" />
+                  <label for="wasser">Berliner Wasser</label>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- FOOD SET 3 -->
+          <div id="food3">
+              <!-- Question 1 -->
+              <div class="question">
+                <h2>Thirsty Berliners go for
+                  </h2>
+
+                <form class="answers">
+                  <div class="answerSet">
+                    <input type="radio" id="cocacola" name="question" />
+                    <label for="cocacola">Coca Cola</label>
+                  </div>
+
+                  <div class="answerSet correct">
+                    <input type="radio" id="mate" name="question" />
+                    <label for="mate">Club Mate</label>
+                  </div>
+
+                  <div class="answerSet">
+                    <input type="radio" id="sprite" name="question" />
+                    <label for="sprite">Sprite</label>
+                  </div>
+                </form>
+              </div>
+
+              <!--Question 2-->
+              <div class="question">
+                <h2>Find amazing food at
+                  </h2>
+
+                <form class="answers">
+                  <div class="answerSet correct">
+                    <input type="radio" id="mh9" name="question" />
+                    <label for="mh9">Markthalle 9</label>
+                  </div>
+
+                  <div class="answerSet">
+                    <input type="radio" id="mh5" name="question" />
+                    <label for="mh5">Markthalle 5</label>
+                  </div>
+
+                  <div class="answerSet">
+                    <input type="radio" id="mh1" name="question" />
+                    <label for="mh1">Markthalle 1</label>
+                  </div>
+                </form>
+              </div>
+
+              <!--Question 3-->
+              <div class="question">
+                <h2>Germanys biggest asia-food-park is</h2>
+
+                <form class="answers">
+                  <div class="answerSet correct">
+                    <input type="radio" id="thaipark" name="question" />
+                    <label for="thaipark">Thaipark Berlin</label>
+                  </div>
+
+                  <div class="answerSet">
+                    <input type="radio" id="chinatown" name="question" />
+                    <label for="chinatown">Chinatown Berlin</label>
+                  </div>
+
+                  <div class="answerSet">
+                    <input type="radio" id="vietnam" name="question" />
+                    <label for="vietnam">Vietnam City Berlin</label>
+                  </div>
+                </form>
+              </div>
+
+              <!--Question 4-->
+              <div class="question">
+                <h2>At Benedict you can have breakfast
+                  </h2>
+
+                <form class="answers">
+                  <div class="answerSet">
+                    <input type="radio" id="16" name="question" />
+                    <label for="16">16 hours a day</label>
+                  </div>
+
+                  <div class="answerSet">
+                    <input type="radio" id="12" name="question" />
+                    <label for="12">12 hours a day</label>
+                  </div>
+
+                  <div class="answerSet correct">
+                    <input type="radio" id="24" name="question" />
+                    <label for="24">24 hours a day</label>
+                  </div>
+                </form>
+              </div>
+
+              <!--Question 5-->
+              <div class="question">
+                <h2>Eat freshly harvested salad at</h2>
+
+                <form class="answers">
+                  <div class="answerSet correct">
+                    <input type="radio" id="goodbank" name="question" />
+                    <label for="goodbank">Good bank Berlin</label>
+                  </div>
+
+                  <div class="answerSet">
+                    <input type="radio" id="saladbank" name="question" />
+                    <label for="saladbank">Salad bank Berlin</label>
+                  </div>
+
+                  <div class="answerSet">
+                    <input type="radio" id="greenbank" name="question" />
+                    <label for="greenbank">Green bank Berlin</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+
+
+
+
+        
+
+
+        </div>
+
+        <!--CLICHÈS-->
+        <div id="stereotypes">
+
+        <!--CLICHÈS SET 1-->
+          <div id="stereotypes1">
+          <!-- Question 1 -->
+          <div class="question">
+            <h2>If you fancy a lactose and gluten free bio chai latte with almond milk you will most likely find it in</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="prenzlauer" name="question" />
+                <label for="prenzlauer">Prenzlauer Berg</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="wedding" name="question" />
+                <label for="wedding">Wedding</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="pankow2" name="question" />
+                <label for="pankow2">Pankow</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 2-->
+          <div class="question">
+            <h2>To live in between Turkish shisha bars and hipster cafés move to</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="mitte" name="question" />
+                <label for="mitte">Mitte</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="treptow" name="question" />
+                <label for="treptow">Treptow</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="neukoelln" name="question" />
+                <label for="neukoelln">Neukölln</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 3-->
+          <div class="question">
+            <h2>Is there some champagne left?</h2>
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="schoeneberg" name="question" />
+                <label for="schoeneberg">Schöneberg</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="fhain" name="question" />
+                <label for="fhain">Friedrichshain</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="charlottenburg" name="question" />
+                <label for="charlottenburg">Charlottenburg</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 4-->
+          <div class="question">
+            <h2>Meet entrepreneurs at</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="barn" name="question" />
+                <label for="barn">The Barn Cafe in Mitte</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="oberholz" name="question" />
+                <label for="oberholz">St. Oberholz in Mitte</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="kaffeemitte" name="question" />
+                <label for="kaffeemitte">Kaffeemitte in Mitte</label>
+              </div>
+            </form>
+          </div>
+
+          <!--Question 5-->
+          <div class="question">
+            <h2>Find an alternative lifestyle and environmentalists in</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="mitte2" name="question" />
+                <label for="mitte2">Mitte</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="neukoelln2" name="question" />
+                <label for="neukoelln2">Neukölln</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="fhain2" name="question" />
+                <label for="fhain2">Friedrichshain</label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!--CLICHÈS SET 2-->
+        <div id="stereotypes2">
+            <!-- Question 1 -->
+            <div class="question">
+              <h2>This Kiez is particularly famous for its left wing attitude</h2>
+  
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="fhain3" name="question" />
+                  <label for="fhain3">Friedrichshain</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="charlottenburg2" name="question" />
+                  <label for="charlottenburg2">Charlottenburg</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="lichtenberg" name="question" />
+                  <label for="lichtenberg">Lichtenberg</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 2-->
+            <div class="question">
+              <h2>You’re a mom and like chai latte? You’ll find friends in…</h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="zehlendorf" name="question" />
+                  <label for="zehlendorf">Zehlendorf</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="pberg" name="question" />
+                  <label for="pberg">Prenzlauer Berg</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="wedding2" name="question" />
+                  <label for="wedding">Wedding</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 3-->
+            <div class="question">
+              <h2>Center of the Berlin gay map:</h2>
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="lichtenberg2" name="question" />
+                  <label for="lichtenberg2">Lichtenberg</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="schoeneberg2" name="question" />
+                  <label for="schoeneberg2">Schöneberg</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="hohenschönhausen" name="question" />
+                  <label for="hohenschönhausen">hohenschönhausen</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 4-->
+            <div class="question">
+              <h2>"For members only“. If you wanna be part of the Berlin elite become part of</h2>
+  
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="soho" name="question" />
+                  <label for="soho">Soho House in Mitte</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="puro" name="question" />
+                  <label for="puro">Puro in Charlottenburg</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="elite" name="question" />
+                  <label for="elite">Elite Club in Kreuzberg</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 5-->
+            <div class="question">
+              <h2>„Let’s hang out at Boxi“. Only in…</h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="kberg2" name="question" />
+                  <label for="kberg2">Kreuzberg</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="nk2" name="question" />
+                  <label for="nk2">Neukölln</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="fhain3" name="question" />
+                  <label for="fhain3">Friedrichshain</label>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        <!--CLICHÈS SET 3-->
+        <div id="stereotypes3">
+            <!-- Question 1 -->
+            <div class="question">
+              <h2>Alternatives practitioners you’ll find in</h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="nk4" name="question" />
+                  <label for="nk4">Neukölln</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="mitte3" name="question" />
+                  <label for="mitte3">Mitte</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="wilmersdorf" name="question" />
+                  <label for="wilmersdorf">Wilmersdorf</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 2-->
+            <div class="question">
+              <h2>Meet Mitte people at
+                </h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="modessa" name="question" />
+                  <label for="modessa">Modessa Bar</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="odessa2" name="question" />
+                  <label for="odessa2">Odessa Bar</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="krodessa" name="question" />
+                  <label for="krodessa">Krodessa Bar</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 3-->
+            <div class="question">
+              <h2>A Friedrichshain status symbol</h2>
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="porsche" name="question" />
+                  <label for="porsche">Porsche</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="fixie" name="question" />
+                  <label for="fixie">Fixie</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="fur" name="question" />
+                  <label for="fur">Fur jacket</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 4-->
+            <div class="question">
+              <h2>Prenzlauer Berg is also called</h2>
+  
+              <form class="answers">
+                <div class="answerSet correct">
+                  <input type="radio" id="schwabylon" name="question" />
+                  <label for="schwabylon">Schwabylon</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="venice" name="question" />
+                  <label for="venice">Little Venice</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="china" name="question" />
+                  <label for="china">China Town</label>
+                </div>
+              </form>
+            </div>
+  
+            <!--Question 5-->
+            <div class="question">
+              <h2>„Live quietly and surrounded by greenery in 
+                </h2>
+  
+              <form class="answers">
+                <div class="answerSet">
+                  <input type="radio" id="mitte6" name="question" />
+                  <label for="mitte6">Mitte</label>
+                </div>
+  
+                <div class="answerSet">
+                  <input type="radio" id="nk7" name="question" />
+                  <label for="nk7">Neukölln</label>
+                </div>
+  
+                <div class="answerSet correct">
+                  <input type="radio" id="stegliz2" name="question" />
+                  <label for="stegliz2">Stegliz</label>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FUN FACTS -->
+        <div id="funfacts">
+
+           <!-- FUN FACTS SET 1 -->
+            <div id="funfacts1">
+          <!--Question 1-->
+          <div class="question">
+            <h2>How many Spätis does Berlin have?</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="2000" name="question" />
+                <label for="2000">2000</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="1000" name="question" />
+                <label for="1000">1000</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="4000" name="question" />
+                <label for="4000">4000</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 2-->
+          <div class="question">
+            <h2>How many people move every hour in Berlin?</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="47" name="question" />
+                <label for="47">47</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="8" name="question" />
+                <label for="8">8</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="18" name="question" />
+                <label for="18">18</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question">
+            <h2>Currywursts eaten per year in Berlin</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="70" name="question" />
+                <label for="70">70 Million</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="35" name="question" />
+                <label for="35">35 Million</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="105" name="question" />
+                <label for="105">105 Million</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 4-->
+          <div class="question">
+            <h2>One in ? Berliners are Berliners</h2>
+
+            <form class="answers">
+              <div class="answerSet">
+                <input type="radio" id="2" name="question" />
+                <label for="2">2</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="10" name="question" />
+                <label for="10">10</label>
+              </div>
+
+              <div class="answerSet correct">
+                <input type="radio" id="4" name="question" />
+                <label for="4">4</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Question 5-->
+          <div class="question">
+            <h2>How many people party in the clubs every weekend?</h2>
+
+            <form class="answers">
+              <div class="answerSet correct">
+                <input type="radio" id="4050" name="question" />
+                <label for="4050">40000 - 50000</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="50100" name="question" />
+                <label for="50100">50000 - 100000</label>
+              </div>
+
+              <div class="answerSet">
+                <input type="radio" id="2040" name="question" />
+                <label for="2040">20000 - 40000</label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+          <!-- FUN FACTS SET 2 -->
+          <div id="funfacts2">
+
+              <!--Question 1-->
+              <div class="question">
+                <h2>Berlins average annual temperature is …</h2>
+    
+                <form class="answers">
+                  <div class="answerSet correct">
+                    <input type="radio" id="8-9" name="question" />
+                    <label for="8-9">8.9 degree celsius</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="10-7" name="question" />
+                    <label for="10-7">10.7 degree celsius</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="15-2" name="question" />
+                    <label for="15-2">15.2 degree celsius</label>
+                  </div>
+                </form>
+              </div>
+    
+              <!-- Question 2-->
+              <div class="question">
+                <h2>How many sheep live in Berlin?</h2>
+    
+                <form class="answers">
+                  <div class="answerSet correct">
+                    <input type="radio" id="440" name="question" />
+                    <label for="440">440</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="1040" name="question" />
+                    <label for="1040">1040</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="200" name="question" />
+                    <label for="200">200</label>
+                  </div>
+                </form>
+              </div>
+    
+              <!-- Question 3 -->
+              <div class="question">
+                <h2>How many turtles live in Zoologischer Garten?</h2>
+    
+                <form class="answers">
+                  <div class="answerSet correct">
+                    <input type="radio" id="64" name="question" />
+                    <label for="64">64</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="64-2" name="question" />
+                    <label for="64-2">64</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="132" name="question" />
+                    <label for="132">132</label>
+                  </div>
+                </form>
+              </div>
+    
+              <!-- Question 4-->
+              <div class="question">
+                <h2>How many seats do Berlins 268 film theaters have?</h2>
+    
+                <form class="answers">
+                  <div class="answerSet">
+                    <input type="radio" id="20000" name="question" />
+                    <label for="20000">20000</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="100000" name="question" />
+                    <label for="100000">100000</label>
+                  </div>
+    
+                  <div class="answerSet correct">
+                    <input type="radio" id="50000" name="question" />
+                    <label for="50000">50000</label>
+                  </div>
+                </form>
+              </div>
+    
+              <!-- Question 5-->
+              <div class="question">
+                <h2>How many cigarette butts end up on the street every year in Berlin?</h2>
+    
+                <form class="answers">
+                  <div class="answerSet">
+                    <input type="radio" id="1-6" name="question" />
+                    <label for="1-6">1.6 billlion</label>
+                  </div>
+    
+                  <div class="answerSet correct">
+                    <input type="radio" id="2-9" name="question" />
+                    <label for="2-9">2.9 billion</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="5-2" name="question" />
+                    <label for="5-2">5.2 billion</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          <!-- FUN FACTS SET 3 -->
+          <div id="funfacts3">
+
+              <!--Question 1-->
+              <div class="question">
+                <h2>Which one is the most Instagrammed bridge in Berlin?</h2>
+    
+                <form class="answers">
+                  <div class="answerSet">
+                    <input type="radio" id="admiral" name="question" />
+                    <label for="admiral">Admiralsbrücke</label>
+                  </div>
+    
+                  <div class="answerSet correct">
+                    <input type="radio" id="oberbaum" name="question" />
+                    <label for="oberbaum">Oberbaumbrücke</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="schlossbruecke" name="question" />
+                    <label for="schlossbruecke">Schlossbrücke</label>
+                  </div>
+                </form>
+              </div>
+    
+              <!-- Question 2-->
+              <div class="question">
+                <h2>How long do Berliners live in the same apartment on average?</h2>
+    
+                <form class="answers">
+                  <div class="answerSet correct">
+                    <input type="radio" id="13" name="question" />
+                    <label for="13">13 years</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="9y" name="question" />
+                    <label for="9y">9 years</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="18" name="question" />
+                    <label for="18">18 years</label>
+                  </div>
+                </form>
+              </div>
+    
+              <!-- Question 3 -->
+              <div class="question">
+                <h2>Which of the following things was not invented in Berlin?</h2>
+    
+                <form class="answers">
+                  <div class="answerSet">
+                    <input type="radio" id="toilet" name="question" />
+                    <label for="toilet">toilet flush</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="condoms" name="question" />
+                    <label for="condoms">Seamless Condoms</label>
+                  </div>
+    
+                  <div class="answerSet correct">
+                    <input type="radio" id="washing" name="question" />
+                    <label for="washing">washing machine</label>
+                  </div>
+                </form>
+              </div>
+    
+              <!-- Question 4-->
+              <div class="question">
+                <h2>1/3 of prisoners in Berlin are imprisoned because</h2>
+    
+                <form class="answers">
+                  <div class="answerSet correct">
+                    <input type="radio" id="travel" name="question" />
+                    <label for="travel">they travelled without buying a ticket</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="graffiti" name="question" />
+                    <label for="graffiti">they put graffiti on a train</label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="shop" name="question" />
+                    <label for="shop">they shoplifted from a Späti</label>
+                  </div>
+                </form>
+              </div>
+    
+              <!-- Question 5-->
+              <div class="question">
+                <h2>Berlin is truly multicultural. There are around __ foreigners in the city.</h2>
+    
+                <form class="answers">
+                  <div class="answerSet">
+                    <input type="radio" id="1" name="question" />
+                    <label for="1">1 million</label>
+                  </div>
+    
+                  <div class="answerSet correct">
+                    <input type="radio" id="500k" name="question" />
+                    <label for="500k">500.000 </label>
+                  </div>
+    
+                  <div class="answerSet">
+                    <input type="radio" id="250" name="question" />
+                    <label for="250">250.000</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+        </div>
+
+      </div>
+
+      <!-- POINTS RED / GREEN -->
+      <div id="pointWrap">
+        <div class="points"></div>
+        <div class="points"></div>
+        <div class="points"></div>
+        <div class="points"></div>
+        <div class="points"></div>
+      </div>
+
+    </section>
+  </div>
+
+
+
+</body>
+
+</html>

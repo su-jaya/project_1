@@ -1,13 +1,10 @@
 window.onload = function() {
 
-
-  $("#default-text").hide();
-
-  $("#fromatob").children().hide();
-  $("#clubszene").children().hide();
-  $("#funfacts").children().hide();
-  $("#food").children().hide();
-  $("#stereotypes").children().hide();
+  $("#fromatob").children().children().hide();
+  $("#clubszene").children().children().hide();
+  $("#funfacts").children().children().hide();
+  $("#food").children().children().hide();
+  $("#stereotypes").children().children().hide();
 
   //FORTUNE WHEEL
 
@@ -102,6 +99,10 @@ window.onload = function() {
   var x = 10;
   var random;
   var totalRotation = 0;
+  var selectedCategory;
+  var countDown;
+  var scoreStorage = 0;
+
 
   function rotate() {
     ctx.clearRect(0, 0, 500, 500);
@@ -121,82 +122,70 @@ window.onload = function() {
 
   //Selects the category
 
-  var selectedCategory;
-
   function selectCategory() {
     var remainderRotation = totalRotation % (Math.PI * 2);
     var sector = Math.PI * 2 - remainderRotation - Math.PI / 2 
     
     categories.forEach(function(cat) {
-    
     if (sector < 0) {
       sector = Math.PI * 2 + sector}
      } )
-    
     categories.forEach(function(cat) {
       if(sector > cat.x && sector < cat.y) {
 
     selectedCategory = cat.id
-    console.log(cat.id)
  
       }})
     
       printCategory();
     };
   
-    // var countDownNumber = 5;
-    var iterations = 5;
 
   function printCategory() {
+
     if (selectedCategory === "fromatob") {
-      selectedCategory = $("#fromatob");
+      var randomIndex = Math.floor(Math.random() * $("#fromatob").children().length);
+      selectedCategory = $("#fromatob").children().eq(randomIndex);
     }
     if (selectedCategory === "berlinclubscene") {
-      selectedCategory = $("#clubszene");
+      var randomIndex = Math.floor(Math.random() * $("#clubszene").children().length);
+      selectedCategory = $("#clubszene").children().eq(randomIndex);
     }
     if (selectedCategory === "eatingdrinking") {
-      selectedCategory = $("#food");
-    }
+      var randomIndex = Math.floor(Math.random() * $("#food").children().length);
+      selectedCategory = $("#food").children().eq(randomIndex);
+    }   
     if (selectedCategory === "funfacts") {
-      selectedCategory = $("#funfacts");
+      var randomIndex = Math.floor(Math.random() * $("#funfacts").children().length);
+      selectedCategory = $("#funfacts").children().eq(randomIndex);
     }
     if (selectedCategory === "kiezclichees") {
-      selectedCategory = $("#stereotypes");
-     
+      var randomIndex = Math.floor(Math.random() * $("#stereotypes").children().length);
+      selectedCategory = $("#stereotypes").children().eq(randomIndex);     
     } 
 
-    selectedCategory
-    .children()
-    .eq(i)
-    .show();
+    selectedCategory.children().eq(i).show();
 
-    
-    // $("#counter").html(countDownNumber);
-  
-    // var countDown = setInterval(function() {
+    // Counter
+    $("#counter").html(4);
 
-    //   if (iterations === 0){
-    //     clearInterval(countDown) };
-    
-    //   if($("#counter").html() > 0) {
-    //     $("#counter").html(parseFloat($("#counter").html())-1);
+    countDown = setInterval(function() {
 
-    //   } else if(parseFloat($("#counter").html()) === 0) {
-    //     questionWrong(); 
-    //     $("#counter").html(5);
-    //   } 
-
-     
-    // },1500);
-
+        if(parseFloat($("#counter").html()) === 0) {
+        questionWrong(); } else {
+          $("#counter").html(parseFloat($("#counter").html())-1)
+        }
+      },1500)
    
-  
+   
   }
+ 
 
 
   //Onclick SPIN button
 
   $("#spin").click(function() {
+    $("#default-text").hide();
     totalRotation = 0;
     // var audio = new Audio("audiofile_fair.mp3");
     // audio.play();
@@ -207,8 +196,6 @@ window.onload = function() {
 
 
 // quiz
-
-
   $(".answerSet input").on("click", function() {
     if ($(this).parent().hasClass("correct")) {
       questionRight();
@@ -221,29 +208,28 @@ window.onload = function() {
   var i = 0;
   
   function questionRight() {
-    iterations--;
     $("#pointWrap").children().eq(i).addClass("greenpoint");
     selectedCategory.children().eq(i).hide();
     gameOver();
-    // $("#counter").html(countDownNumber);
     i += 1;
     selectedCategory.children().eq(i).show();
+    $("#counter").html(4);
   }
   
   function questionWrong() {
-    iterations--;
     $("#pointWrap").children().eq(i).addClass("redpoint");
     selectedCategory.children().eq(i).hide();
     gameOver();
-    // $("#counter").html(countDownNumber);
-    i += 1;
+        i += 1;
     selectedCategory.children().eq(i).show();
+    $("#counter").html(4);
   }
 
   function gameOver() {
    
     if(i === 4) {
-     
+      clearInterval(countDown);
+      
       window.setTimeout(function() { 
 
       var counterRed = 0;
@@ -260,13 +246,17 @@ window.onload = function() {
       if(counterRed === 0) {
         alert("Amazing! You answered everything correct")
       } else if (counterRed === 1) {
-        alert("Good Job. Only one false!")
+        alert("Good Job. Only one false!");
+        scoreStorage += 4;
       } else if (counterRed === 2) {
-        alert("Nice one. Two false")
+        alert("Nice one. Two false");
+        scoreStorage += 3;
       } else if (counterRed === 3) {
-        alert("3 out of 5 wrong")
+        alert("3 out of 5 wrong");
+        scoreStorage += 2;
       } else if (counterRed === 4) {
-        alert("only 1 right. You can do better!")
+        alert("only 1 right. You can do better!");
+        scoreStorage += 1;
       } else if (counterRed === 5) {
         alert("all wrong! :( try again!")
       }
@@ -280,22 +270,22 @@ window.onload = function() {
     i = 0;
 
 
+
     for(var o = 0; o < 5; o++) {
       $("#pointWrap").children().eq(o).removeClass("greenpoint");
       $("#pointWrap").children().eq(o).removeClass("redpoint");
     }
-    
-
-
+    $("#counter").html(" ");
+    $("#default-text").html("SO MUCH FUN! <br> SPIN AGAIN!").show();
 
     } , 800)
 
+    selectedCategory.remove();
+   
 
   }
-
-
   
-  
+
   }
 
 
