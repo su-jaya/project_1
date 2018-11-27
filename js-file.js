@@ -167,7 +167,7 @@ window.onload = function() {
     selectedCategory.children().eq(i).show();
 
     // Counter
-    $("#counter").html(4);
+    $("#counter").html(5);
 
     countDown = setInterval(function() {
 
@@ -175,7 +175,7 @@ window.onload = function() {
         questionWrong(); } else {
           $("#counter").html(parseFloat($("#counter").html())-1)
         }
-      },1500)
+      },1000)
    
    
   }
@@ -208,12 +208,14 @@ window.onload = function() {
   var i = 0;
   
   function questionRight() {
+    scoreStorage += 1;
     $("#pointWrap").children().eq(i).addClass("greenpoint");
     selectedCategory.children().eq(i).hide();
     gameOver();
     i += 1;
     selectedCategory.children().eq(i).show();
-    $("#counter").html(4);
+    $("#counter").html(5);
+    $("#total").html("Total Score: " + scoreStorage)
   }
   
   function questionWrong() {
@@ -222,8 +224,9 @@ window.onload = function() {
     gameOver();
         i += 1;
     selectedCategory.children().eq(i).show();
-    $("#counter").html(4);
+    $("#counter").html(5);
   }
+  
 
   function gameOver() {
    
@@ -247,16 +250,12 @@ window.onload = function() {
         alert("Amazing! You answered everything correct")
       } else if (counterRed === 1) {
         alert("Good Job. Only one false!");
-        scoreStorage += 4;
       } else if (counterRed === 2) {
         alert("Nice one. Two false");
-        scoreStorage += 3;
       } else if (counterRed === 3) {
         alert("3 out of 5 wrong");
-        scoreStorage += 2;
       } else if (counterRed === 4) {
         alert("only 1 right. You can do better!");
-        scoreStorage += 1;
       } else if (counterRed === 5) {
         alert("all wrong! :( try again!")
       }
