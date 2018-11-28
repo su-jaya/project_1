@@ -161,21 +161,3 @@ justify-content: center;
   font-size: 150%;
 }
 
-#modalWindow {
-  width:600px;
-  height: 400px;
-  background-color: lightgray;
-  position: fixed;
-  left: 30%;
-  border-radius: 30px;
-}
-
-#greybackground {
-width: 1000px;
-height: 1000px;
-background-color: rgba(0,0,1,0.4);
-position: fixed;
-top:0;
-right:0;
-
-}
